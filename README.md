@@ -20,3 +20,18 @@ We'll use black as our code formatter of choice. We installed black in our dev d
 2. Run `black --check --diff formatting_example.py` to see when black would change about this file. 
 3. Run `black formatting_example.py` to see black actually make the formatting changes. 
 
+## Linting code
+
+We'll use pylint as our code linter. pylance is another code linter that comes installed with the "Python" extension of VSCode.
+
+1. Add `pylint` to our dev dependencies in poetry: run `poetry add --group dev pylint`. 
+2. Write the function described in `sample_functions.py`.
+3. Then run `pylint` on your code by running `pylint sample_functions.py`. 
+4. Try setting up the `pylint` extension to VSCode. Open `sample_functions.py` and see what alerts you see.
+
+## Type checking
+
+We'll use mypy as our type-checking utility.
+
+1. Add `mypy` to our dev dependencies in poetry. Install and set-up the VSCode extension for mypy.
+2. Add some types to the function you wrote in `sample_functions.py` and track the alerts that mypy gives you as you go along.
