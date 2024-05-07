@@ -21,8 +21,9 @@ class PopulationSearch:
         """
         Given a country name, return the population of that country.
         """
+        standardized_country_name = self.standardize_country_name(country)
         for entry in self.data:
-            if entry["country"] == country:
+            if entry["country"] == standardized_country_name:
                 return entry["population"]
         return None
 
@@ -34,3 +35,14 @@ class PopulationSearch:
         and keeps the rest lowercase.
         """
         return country_name.lower().capitalize()
+
+    def get_population_difference(self, country_a: str, country_b: str) -> int:
+        """
+        Given two country names, return the difference in population
+        between the two countries.
+        """
+        population_a = self.get_population(country_a)
+        population_b = self.get_population(country_b)
+        if population_a is None or population_b is None:
+            raise ValueError("One or both countries not found.")
+        return abs(population_a - population_b)
