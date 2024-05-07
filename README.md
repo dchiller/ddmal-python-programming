@@ -35,3 +35,15 @@ We'll use mypy as our type-checking utility.
 
 1. Add `mypy` to our dev dependencies in poetry. Install and set-up the VSCode extension for mypy.
 2. Add some types to the function you wrote in `sample_functions.py` and track the alerts that mypy gives you as you go along.
+3. Try adding the `--strict` argument to mypy in the VSCode extension settings. See what new things mypy complains about. Depending on the code base you are working on and your own workflow, you may or may not find the `--strict` setting helpful.
+
+## Unit testing
+
+Python ships with the built-in unittest module.
+
+1. Write some unit tests using the unittest module for the class in function_for_testing.py.
+2. Run your tests by running `python -m unittest tests`. Do they pass?
+3. Try adding a test for some additional functionality. Run your unittests to verify that your new test does not pass.
+4. Add a function to what you have in `sample_functions.py`. Run your tests again. Do they pass?
+
+Note: You don't have to run all of your unit tests every time. To select what test (or section of tests) to run, you can pass in a dot-separated path to the test. For example, to run a test case call "MyTestCase" that is in `tests.py`, you can run `python -m unittest tests.MyTestCase`. 
